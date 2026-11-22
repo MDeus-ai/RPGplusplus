@@ -19,6 +19,8 @@ project(rpgplusplus)
 
 # Add raylib, and here you would add any other libraries you want to use in your game
 add_subdirectory(thirdparty/raylib-5.0)
+add_subdirectory(thirdparty/imgui-docking)
+add_subdirectory(thirdparty/rlimgui)
 
 
 # MY_SOURCES is defined to be a list of all the source files for my game 
@@ -75,4 +77,4 @@ endif()
 target_include_directories("${CMAKE_PROJECT_NAME}" PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/src/")
 
 # Link the raylib library to statically to the game (Can also add other libraries)
-target_link_libraries("${CMAKE_PROJECT_NAME}" PRIVATE raylib_static)
+target_link_libraries("${CMAKE_PROJECT_NAME}" PRIVATE raylib_static imgui rlimgui)
